@@ -1,1 +1,1 @@
-# pw_execicios
+# pw_exercicios
