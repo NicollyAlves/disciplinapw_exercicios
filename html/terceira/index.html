@@ -13,42 +13,68 @@
         botão Enviar Mensagem. Agradecemos por seu contato.
     </p>
 
-    <fieldset>
-        <legend>Dados Básicos</legend>
-        Nome <input type="text" name="nome"><br>
-        E-mail <input type="email" name="email" placeholder="seunome@dominio.com.br" ><br>
-        Website <input value="http://"><br>
-    </fieldset>
+    <form>
+        <fieldset>
+            <legend>Dados Básicos</legend>
+            Nome <input type="text" name="nome"><br>
+            E-mail <input type="email" name="email" placeholder="seunome@dominio.com.br" ><br>
+            Website <input value="http://"><br>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Seu curso no Instituto de Computação</legend>
+            <input type="radio" name="curso" value="cc" id="cc">
+            <label for="cc">Ciência da Computação</label><br>
+            <input type="radio" name="curso" value="si" id="si">
+            <label for="si">Sistemas de Informação</label><br>
+            <input type="radio" name="curso" value="ec" id="ec">
+            <label for="ec">Engenharia da Computação</label><br>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Assinale as linguagens já usadas por você:</legend>
+            <label for="java">Java</label>
+            <input type="checkbox" name="linguagem" id="java" value="java">
+            <label for="c">C</label>
+            <input type="checkbox" name="linguagem" id="c" value="c">
+            <label for="cpp">C++</label>
+            <input type="checkbox" name="linguagem" id="cpp" value="cpp">
+            <label for="perl">Perl</label>
+            <input type="checkbox" name="linguagem" id="perl" value="perl">
+            <label for="python">Python</label>
+            <input type="checkbox" name="linguagem" id="python" value="python">
+            <label for="js">Javascript</label>
+            <input type="checkbox" name="linguagem" id="js" value="js">
+        </fieldset>
+    
+        <fieldset>
+            <legend>Dados Complementares</legend>
+            Cor Favorita <input type="color" name="dados" id="cor"><br>
+            Data de Nascimento <input type="date" name="dados" id="nascimento"><br>
+            Ano de Entradas em seu Curso do Icomp <input type="number" value="2000" name="dados" id="anoEntrada"><br>
+            Nota para este site <input type="range" name="dados" id="nota">
+        </fieldset>
+    
+        <fieldset>
+            <legend>Área de atuação</legend>
+            <select name="areas">
+                <option value="bancodedados">Banco de Dados</option>
+            </select>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Submeta de curriculo vitae</legend>
+            <input type="file" name="curriculo">
+        </fieldset>
+    
+        <fieldset>
+            <legend>Digite sua Mensagem</legend>
+            <input type="text" value="Este é o valor padrão!" name="texto">
+        </fieldset>
 
-    <fieldset>
-        <legend>Seu curso no Instituo de Computação</legend>
-        <input type="radio" name="curso" value="cc" id="cc">
-        <label for="cc">Ciência da Computação</label><br>
-        <input type="radio" name="curso" value="si" id="si">
-        <label for="si">Sistemas de Informação</label><br>
-        <input type="radio" name="curso" value="ec" id="ec">
-        <label for="ec">Engenharia da Computação</label><br>
-    </fieldset>
-
-    <fieldset>
-        <legend>Assinale as linguagens já usadas por você</legend>
-        <label for="java">Java</label>
-        <input type="checkbox" name="linguagem" id="java" value="java">
-        <label for="c">C</label>
-        <input type="checkbox" name="linguagem" id="c" value="c">
-        <label for="cpp">C++</label>
-        <input type="checkbox" name="linguagem" id="cpp" value="cpp">
-        <label for="perl">Perl</label>
-        <input type="checkbox" name="linguagem" id="perl" value="perl">
-        <label for="python">Python</label>
-        <input type="checkbox" name="linguagem" id="python" value="python">
-        <label for="js">Javascript</label>
-        <input type="checkbox" name="linguagem" id="js" value="js">
-    </fieldset>
-
-    <fieldset>
-        <legend>Dados Complementares</legend>
-    </fieldset>
+        <input type="button" value="Resetar Dados" name="resetar">
+        <input type="submit" value="Enviar Mensagem" name="enviar">
+    </form>
 
 </body>
 </html>
