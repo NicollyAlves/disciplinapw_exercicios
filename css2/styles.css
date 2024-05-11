@@ -9,22 +9,25 @@ main {
     background-image: url(James\ webb\ telescope\ image.jpeg);
     width: 100vw;
     height: 100vh;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    background-position-y: top;
 }
 
 section {
     position: absolute;
     margin-top: 100px;
     margin-left: 50px;
-    border: 6px solid rgb(165, 97, 42);
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 200px;
-    height: 400px;
     padding: 30px;
-    text-align: center;
-    color: white;
+    height: 400px;
+    width: 200px;
+    border: 6px solid rgb(165, 97, 42);
+    background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 3px 3px 8px 2px rgb(0, 0, 0);
+    color: white;
+    text-align: center;
 }
 
 div {
