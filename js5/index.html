@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Barras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Um gráfico de barras</h1>
+    <div id="inputBarras">
+        <p>Informe a altura das barras:</p>
+        <input id="inputBarra1" type="number">
+        <input id="inputBarra2" type="number">
+        <input id="inputBarra3" type="number">
+        <input id="inputBarra4" type="number">
+        <input id="inputBarra5" type="number">
+    </div>
+    <div id="inputLargura">
+        <p>Informe a largura das barras:</p>
+        <input type="number" name="larguraBarras" id="larguraBarras">
+    </div>
+    <button id="botao" onclick="desenhar()">Desenhar o gráfico</button>
+    <div id="barras">
+        <div id="barra1" class="barra"></div>
+        <div id="barra2" class="barra"></div>
+        <div id="barra3" class="barra"></div>
+        <div id="barra4" class="barra"></div>
+        <div id="barra5" class="barra"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
