@@ -1,0 +1,27 @@
+#board {
+  background-color: #ccc;
+  border: 2px solid black;
+  margin: 50px auto;
+  display: table;
+}
+
+#board td {
+  width: 16px;
+  height: 16px;
+}
+
+#score {
+  font-size: 20px;
+  margin: 10px;
+  position: absolute;
+  top: 0%;
+}
+
+#game-over {
+  font-size: 30px;
+  color: rgb(199, 0, 0);
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
