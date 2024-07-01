@@ -8,10 +8,12 @@
   let score = 0;
   let interval;
   let gameStarted = false;
+  let frameCount = 0;
 
   function init() {
     score = 0;
     FPS = 10;
+    frameCount = 0;
     gameStarted = true;
     if (board) {
       document.body.removeChild(board.element);
@@ -20,6 +22,10 @@
     snake = new Snake([[4, 4], [4, 5], [4, 6]]);
     food = new Food();
     board.updateScore();
+    board.clearGameOverMessage();
+  }
+
+  function startGame() {
     interval = setInterval(run, 1000 / FPS);
   }
 
@@ -38,9 +44,11 @@
         snake.changeDirection(3);
         break;
       case "s":
-        if (!gameStarted) {
+        if (!interval && gameStarted) {
+          startGame();
+        } else if (!gameStarted) {
           init();
-          board.clearGameOverMessage();
+          startGame();
         }
         break;
       case "p":
@@ -79,7 +87,7 @@
 
     updateScore() {
       const scoreElement = document.getElementById('score');
-      scoreElement.textContent = `Score: ${score.toString().padStart(5, '0')}`;
+      scoreElement.textContent = `SCORE: ${score.toString().padStart(5, '0')}`;
     }
 
     gameOverMessage() {
@@ -100,7 +108,7 @@
   class Snake {
     constructor(body) {
       this.body = body;
-      this.color = "#222";
+      this.color = "#0d0";
       this.direction = 1;
       this.body.forEach(field => document.querySelector(`#board tr:nth-child(${field[0] + 1}) td:nth-child(${field[1] + 1})`).style.backgroundColor = this.color);
     }
@@ -166,7 +174,12 @@
     }
 
     place() {
-      this.position = [Math.floor(Math.random() * SIZE), Math.floor(Math.random() * SIZE)];
+      let isValidPosition;
+      do {
+        this.position = [Math.floor(Math.random() * SIZE), Math.floor(Math.random() * SIZE)];
+        isValidPosition = !snake.body.some(segment => segment[0] === this.position[0] && segment[1] === this.position[1]);
+      } while (!isValidPosition);
+
       this.type = Math.random() < 0.33 ? 'red' : 'black';
       document.querySelector(`#board tr:nth-child(${this.position[0] + 1}) td:nth-child(${this.position[1] + 1})`).style.backgroundColor = this.type;
     }
@@ -175,15 +188,16 @@
   function run() {
     try {
       snake.walk();
+      frameCount++;
+
+      if (frameCount % 60 === 0) {
+        clearInterval(interval);
+        FPS += 1;
+        interval = setInterval(run, 1000 / FPS);
+      }
     } catch (error) {
       console.error(error);
       gameOver();
-    }
-
-    if (score % 60 === 0 && score !== 0) {
-      clearInterval(interval);
-      FPS += 4;
-      interval = setInterval(run, 1000 / FPS);
     }
   }
 
