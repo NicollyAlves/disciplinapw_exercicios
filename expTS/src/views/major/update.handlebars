@@ -1,0 +1,19 @@
+<h3>Editar Curso</h3>
+<div class="col-6">
+    <form action="/major/update/{{major.id}}" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" id="name" name="name" class="form-control" value="{{major.name}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="code" class="form-label">Sigla</label>
+            <input type="text" id="code" name="code" class="form-control" value="{{major.code}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descrição</label>
+            <textarea id="description" name="description" class="form-control">{{major.description}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+        <a href="/major" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
